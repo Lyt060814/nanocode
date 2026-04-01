@@ -3,9 +3,9 @@
   <p>
     <a href="https://www.npmjs.com/package/nanocode-cli"><img src="https://img.shields.io/npm/v/nanocode-cli" alt="npm"></a>
     <img src="https://img.shields.io/badge/lines-~15K-blue" alt="Lines">
-    <img src="https://img.shields.io/badge/tools-15-blue" alt="Tools">
     <img src="https://img.shields.io/badge/node-≥18-green" alt="Node">
     <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+    <a href="https://deepwiki.com/Lyt060814/nanocode"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
   </p>
 </div>
 
