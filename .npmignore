@@ -1,0 +1,9 @@
+src/
+test/
+*.ts
+tsconfig.json
+vitest.config.ts
+.claude/
+.nanocode/
+NANOCODE.md
+PLAN.md

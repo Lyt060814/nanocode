@@ -1,0 +1,53 @@
+{
+  "name": "nanocode-cli",
+  "version": "0.1.0",
+  "description": "Lightweight AI coding agent for the terminal — powered by Claude",
+  "type": "module",
+  "main": "dist/headless.js",
+  "bin": {
+    "nanocode": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "ai",
+    "claude",
+    "coding-agent",
+    "cli",
+    "anthropic",
+    "llm",
+    "terminal",
+    "repl"
+  ],
+  "author": "Yitong Li",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "diff": "^7.0.0",
+    "fast-glob": "^3.3.3",
+    "turndown": "^7.2.0",
+    "zod": "^3.24.0",
+    "zod-to-json-schema": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.0",
+    "@types/node": "^22.0.0",
+    "@types/turndown": "^5.0.5",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
