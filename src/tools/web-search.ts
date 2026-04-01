@@ -46,7 +46,7 @@ async function performSearch(query: string, abortSignal?: AbortSignal): Promise<
     const response = await fetch(url, {
       signal: controller.signal,
       headers: {
-        'User-Agent': 'NanoCode/1.0 (CLI Agent)',
+        'User-Agent': 'nanocode/1.0 (CLI Agent)',
         'Accept': 'text/html',
       },
     })

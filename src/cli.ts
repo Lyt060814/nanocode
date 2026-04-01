@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * NanoCode CLI Entry Point
+ * nanocode CLI Entry Point
  *
  * Simple REPL + one-shot mode.
  * Key patterns from Claude Code: cli.tsx, main.tsx, REPL.tsx

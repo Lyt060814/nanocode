@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import {
-  NanoCodeError,
+  nanocodeError,
   PromptTooLongError,
   RateLimitError,
   OverloadedError,
@@ -19,8 +19,8 @@ import {
 // ---------------------------------------------------------------------------
 
 describe('classifyError', () => {
-  it('returns the same error if already a NanoCodeError', () => {
-    const err = new NanoCodeError('already typed')
+  it('returns the same error if already a nanocodeError', () => {
+    const err = new nanocodeError('already typed')
     expect(classifyError(err)).toBe(err)
   })
 
@@ -96,27 +96,27 @@ describe('classifyError', () => {
     }
   })
 
-  it('maps generic Error to NanoCodeError', () => {
+  it('maps generic Error to nanocodeError', () => {
     const err = new Error('something unknown')
     const result = classifyError(err)
-    expect(result).toBeInstanceOf(NanoCodeError)
+    expect(result).toBeInstanceOf(nanocodeError)
     expect(result).not.toBeInstanceOf(AuthenticationError)
     expect(result).not.toBeInstanceOf(NetworkError)
   })
 
-  it('maps non-Error values to NanoCodeError with String()', () => {
+  it('maps non-Error values to nanocodeError with String()', () => {
     const result = classifyError('just a string')
-    expect(result).toBeInstanceOf(NanoCodeError)
+    expect(result).toBeInstanceOf(nanocodeError)
     expect(result.message).toBe('just a string')
   })
 
-  it('maps non-Error number to NanoCodeError', () => {
+  it('maps non-Error number to nanocodeError', () => {
     const result = classifyError(42)
-    expect(result).toBeInstanceOf(NanoCodeError)
+    expect(result).toBeInstanceOf(nanocodeError)
     expect(result.message).toBe('42')
   })
 
-  it('passes through NanoCodeError subclasses unchanged', () => {
+  it('passes through nanocodeError subclasses unchanged', () => {
     const err = new RateLimitError('rate', 3000)
     expect(classifyError(err)).toBe(err)
   })
@@ -195,8 +195,8 @@ describe('isRetryable', () => {
     expect(isRetryable(new PromptTooLongError('ptl'))).toBe(false)
   })
 
-  it('returns false for generic NanoCodeError', () => {
-    expect(isRetryable(new NanoCodeError('generic'))).toBe(false)
+  it('returns false for generic nanocodeError', () => {
+    expect(isRetryable(new nanocodeError('generic'))).toBe(false)
   })
 
   it('returns false for AbortError', () => {
@@ -367,10 +367,10 @@ describe('sleep', () => {
 // ---------------------------------------------------------------------------
 
 describe('Error classes', () => {
-  it('NanoCodeError has correct name and cause', () => {
+  it('nanocodeError has correct name and cause', () => {
     const cause = new Error('original')
-    const err = new NanoCodeError('wrapper', cause)
-    expect(err.name).toBe('NanoCodeError')
+    const err = new nanocodeError('wrapper', cause)
+    expect(err.name).toBe('nanocodeError')
     expect(err.cause).toBe(cause)
     expect(err.message).toBe('wrapper')
   })

@@ -1,5 +1,5 @@
 /**
- * NanoCode Cache Boundary
+ * nanocode Cache Boundary
  *
  * Handles splitting system prompt blocks into static (cacheable) and
  * dynamic (per-session) parts, and applying cache_control markers.

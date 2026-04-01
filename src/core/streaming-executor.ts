@@ -1,5 +1,5 @@
 /**
- * NanoCode Streaming Tool Executor
+ * nanocode Streaming Tool Executor
  *
  * Partitions tool calls into concurrent-safe (parallel) and serial batches.
  * Key patterns from Claude Code: StreamingToolExecutor.ts, toolOrchestration.ts

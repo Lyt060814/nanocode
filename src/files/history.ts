@@ -1,5 +1,5 @@
 /**
- * NanoCode — File History State
+ * nanocode — File History State
  *
  * Tracks file edits with versioned backups and snapshots.
  * Supports rewind-to-snapshot and diff stats between snapshots.

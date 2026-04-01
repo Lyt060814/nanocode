@@ -3,7 +3,7 @@
  *
  * MCP (Model Context Protocol) tools are dynamically registered when MCP
  * servers are configured. This module provides the wrapper that converts
- * MCP tool calls to the NanoCode Tool interface.
+ * MCP tool calls to the nanocode Tool interface.
  *
  * Will be connected to an MCP client in a future phase.
  */
@@ -38,15 +38,15 @@ export interface McpCallResult {
 // ---------------------------------------------------------------------------
 
 /**
- * Create a NanoCode Tool wrapper for an MCP tool.
+ * Create a nanocode Tool wrapper for an MCP tool.
  *
- * The wrapper translates between NanoCode's ToolDef interface and
+ * The wrapper translates between nanocode's ToolDef interface and
  * the MCP protocol's tool call format.
  *
  * @param serverName - Name of the MCP server providing this tool
  * @param mcpTool - The MCP tool definition (name, description, schema)
  * @param callMcp - Function to invoke the MCP tool on its server
- * @returns A fully-built NanoCode Tool
+ * @returns A fully-built nanocode Tool
  */
 export function wrapMcpTool(
   serverName: string,
@@ -154,7 +154,7 @@ export function clearMcpTools(): void {
  * @param serverName - Name identifier for the MCP server
  * @param toolDefs - Array of MCP tool definitions from the server
  * @param callMcp - Function to call tools on this server
- * @returns Array of wrapped NanoCode tools
+ * @returns Array of wrapped nanocode tools
  */
 export function registerMcpServer(
   serverName: string,

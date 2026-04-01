@@ -1,5 +1,5 @@
 /**
- * NanoCode — LRU File State Cache
+ * nanocode — LRU File State Cache
  *
  * Implements FileStateCache with LRU eviction, size limits,
  * deep clone for sub-agent isolation, and timestamp-based merge.

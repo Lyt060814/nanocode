@@ -1,5 +1,5 @@
 /**
- * NanoCode API Client
+ * nanocode API Client
  *
  * Claude API streaming client with retry, caching, and extended thinking.
  * Key patterns from Claude Code: claude.ts, withRetry.ts

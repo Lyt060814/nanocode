@@ -1,8 +1,8 @@
 /**
- * NanoCode Headless / SDK Mode
+ * nanocode Headless / SDK Mode
  *
- * Programmatic interface to NanoCode — no terminal UI, pure async generator.
- * Use this to embed NanoCode in other applications.
+ * Programmatic interface to nanocode — no terminal UI, pure async generator.
+ * Use this to embed nanocode in other applications.
  *
  * Usage:
  *   import { createAgent } from 'nanocode/headless'

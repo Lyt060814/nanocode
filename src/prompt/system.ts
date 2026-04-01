@@ -1,5 +1,5 @@
 /**
- * NanoCode System Prompt Builder
+ * nanocode System Prompt Builder
  *
  * Constructs the multi-block system prompt that drives agent behavior.
  * The prompt is split into a STATIC part (cacheable) and a DYNAMIC part
@@ -17,7 +17,7 @@ import { SYSTEM_PROMPT_DYNAMIC_BOUNDARY } from './cache-boundary.js'
 // ---------------------------------------------------------------------------
 
 const IDENTITY = `\
-You are NanoCode, a CLI-based coding agent. You are pair programming with the \
+You are nanocode, a CLI-based coding agent. You are pair programming with the \
 user to solve their coding task. The task may require creating a new codebase, \
 modifying or debugging an existing codebase, or simply answering a question.
 

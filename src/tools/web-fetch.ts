@@ -142,7 +142,7 @@ export const webFetchToolDef: ToolDef<WebFetchInput> = {
       const response = await fetch(url, {
         signal: controller.signal,
         headers: {
-          'User-Agent': 'NanoCode/1.0 (CLI Agent)',
+          'User-Agent': 'nanocode/1.0 (CLI Agent)',
           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,text/plain;q=0.8,*/*;q=0.7',
         },
         redirect: 'follow',

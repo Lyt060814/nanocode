@@ -1,5 +1,5 @@
 /**
- * NanoCode — Atomic File Write
+ * nanocode — Atomic File Write
  *
  * Writes files atomically by writing to a temporary file in the same
  * directory, then renaming. Falls back to direct write if rename fails.

@@ -1,5 +1,5 @@
 /**
- * NanoCode — Streaming Utilities
+ * nanocode — Streaming Utilities
  *
  * Terminal spinner with random verbs (inspired by Claude Code's 156 verbs),
  * and async generator streaming to stdout.

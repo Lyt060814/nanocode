@@ -5,7 +5,7 @@
  *   1. Load server configs from settings files
  *   2. Spawn and connect to each server
  *   3. Discover tools via tools/list
- *   4. Wrap each MCP tool as a NanoCode Tool
+ *   4. Wrap each MCP tool as a nanocode Tool
  *   5. Return the aggregated tool array
  *
  * Also provides shutdown for graceful cleanup.
@@ -48,10 +48,10 @@ function jsonSchemaToZod(
 }
 
 /**
- * Wrap a single MCP tool definition as a NanoCode Tool.
+ * Wrap a single MCP tool definition as a nanocode Tool.
  *
  * The resulting Tool delegates call() to the McpClient.callTool() method,
- * converting the MCP result format into NanoCode's ToolResult format.
+ * converting the MCP result format into nanocode's ToolResult format.
  *
  * Tool names are prefixed with "mcp_{serverName}_" to avoid collisions
  * with built-in tools.
@@ -59,7 +59,7 @@ function jsonSchemaToZod(
  * @param serverName  Logical name of the MCP server
  * @param toolDef     Tool definition from the server's tools/list response
  * @param client      Connected McpClient instance
- * @returns           A fully-formed NanoCode Tool
+ * @returns           A fully-formed nanocode Tool
  */
 function wrapMcpTool(
   serverName: string,
@@ -151,7 +151,7 @@ function wrapMcpTool(
  *   1. Creates an McpClient
  *   2. Connects (spawn + initialize handshake)
  *   3. Lists available tools
- *   4. Wraps each tool for the NanoCode tool system
+ *   4. Wraps each tool for the nanocode tool system
  *
  * Servers that fail to connect are logged to stderr and skipped.
  * The returned array may be empty if no servers are configured or

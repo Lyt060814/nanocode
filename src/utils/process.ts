@@ -1,5 +1,5 @@
 /**
- * NanoCode — Process Utilities
+ * nanocode — Process Utilities
  *
  * Child process spawning with timeout, signal handling, and
  * graceful shutdown cleanup.

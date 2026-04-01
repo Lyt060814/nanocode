@@ -1,5 +1,5 @@
 /**
- * NanoCode — Permission Engine
+ * nanocode — Permission Engine
  *
  * Central permission decision logic. Evaluates tool invocations against
  * deny rules, allow rules, permission mode, and falls through to user prompt.

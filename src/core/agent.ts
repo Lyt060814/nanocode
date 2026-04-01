@@ -1,5 +1,5 @@
 /**
- * NanoCode Agent Loop
+ * nanocode Agent Loop
  *
  * THE critical file. Implements the core agent loop as an async generator.
  * Key patterns from Claude Code: query.ts:307-1729
@@ -294,7 +294,7 @@ async function performCompact(
 // ---------------------------------------------------------------------------
 
 /**
- * Core agent loop — the heart of NanoCode.
+ * Core agent loop — the heart of nanocode.
  *
  * Yields StreamEvents as it processes. The caller (CLI/headless) consumes
  * these events to display output and track progress.

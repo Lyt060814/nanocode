@@ -1,5 +1,5 @@
 /**
- * NanoCode Context Compaction
+ * nanocode Context Compaction
  *
  * When the conversation grows too large for the context window, compaction
  * summarizes older messages into a single summary message while preserving

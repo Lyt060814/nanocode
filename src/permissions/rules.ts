@@ -1,5 +1,5 @@
 /**
- * NanoCode — Permission Rules
+ * nanocode — Permission Rules
  *
  * Loads permission rules from project and user settings files,
  * and implements rule matching against tool invocations.

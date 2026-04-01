@@ -1,5 +1,5 @@
 /**
- * NanoCode Memory (CLAUDE.md) Loader
+ * nanocode Memory (CLAUDE.md) Loader
  *
  * Loads project and user-level CLAUDE.md memory files.
  *

@@ -1,5 +1,5 @@
 /**
- * NanoCode Compact Prompt
+ * nanocode Compact Prompt
  *
  * The prompt used to instruct the model to summarize a conversation
  * when context compaction is triggered. This is sent as a user message

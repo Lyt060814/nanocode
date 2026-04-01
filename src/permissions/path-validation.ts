@@ -1,5 +1,5 @@
 /**
- * NanoCode — Path Validation
+ * nanocode — Path Validation
  *
  * Validates file paths against dangerous system directories, symlink
  * escape, and project boundary constraints.

@@ -1,5 +1,5 @@
 /**
- * NanoCode Error Classification & Retry Logic
+ * nanocode Error Classification & Retry Logic
  *
  * Maps API/network errors to typed errors with retry strategies.
  * Key patterns from Claude Code: withRetry.ts, PTL recovery.
@@ -9,14 +9,14 @@
 // Error Classes
 // ---------------------------------------------------------------------------
 
-export class NanoCodeError extends Error {
+export class nanocodeError extends Error {
   constructor(message: string, public readonly cause?: Error) {
     super(message)
-    this.name = 'NanoCodeError'
+    this.name = 'nanocodeError'
   }
 }
 
-export class PromptTooLongError extends NanoCodeError {
+export class PromptTooLongError extends nanocodeError {
   constructor(
     message: string,
     public readonly tokenCount?: number,
@@ -27,7 +27,7 @@ export class PromptTooLongError extends NanoCodeError {
   }
 }
 
-export class RateLimitError extends NanoCodeError {
+export class RateLimitError extends nanocodeError {
   constructor(
     message: string,
     public readonly retryAfterMs: number,
@@ -37,7 +37,7 @@ export class RateLimitError extends NanoCodeError {
   }
 }
 
-export class OverloadedError extends NanoCodeError {
+export class OverloadedError extends nanocodeError {
   public consecutiveCount: number = 1
   constructor(message: string) {
     super(message)
@@ -45,21 +45,21 @@ export class OverloadedError extends NanoCodeError {
   }
 }
 
-export class AuthenticationError extends NanoCodeError {
+export class AuthenticationError extends nanocodeError {
   constructor(message: string) {
     super(message)
     this.name = 'AuthenticationError'
   }
 }
 
-export class NetworkError extends NanoCodeError {
+export class NetworkError extends nanocodeError {
   constructor(message: string, cause?: Error) {
     super(message, cause)
     this.name = 'NetworkError'
   }
 }
 
-export class ToolExecutionError extends NanoCodeError {
+export class ToolExecutionError extends nanocodeError {
   constructor(
     message: string,
     public readonly toolName: string,
@@ -70,7 +70,7 @@ export class ToolExecutionError extends NanoCodeError {
   }
 }
 
-export class AbortError extends NanoCodeError {
+export class AbortError extends nanocodeError {
   constructor(message: string = 'Operation aborted') {
     super(message)
     this.name = 'AbortError'
@@ -81,8 +81,8 @@ export class AbortError extends NanoCodeError {
 // Error Classification
 // ---------------------------------------------------------------------------
 
-export function classifyError(error: unknown): NanoCodeError {
-  if (error instanceof NanoCodeError) return error
+export function classifyError(error: unknown): nanocodeError {
+  if (error instanceof nanocodeError) return error
 
   if (error instanceof Error) {
     const msg = error.message.toLowerCase()
@@ -126,10 +126,10 @@ export function classifyError(error: unknown): NanoCodeError {
       return new NetworkError(error.message, error)
     }
 
-    return new NanoCodeError(error.message, error)
+    return new nanocodeError(error.message, error)
   }
 
-  return new NanoCodeError(String(error))
+  return new nanocodeError(String(error))
 }
 
 // ---------------------------------------------------------------------------
@@ -142,7 +142,7 @@ export interface RetryOptions {
   maxDelayMs?: number
   backoffFactor?: number
   abortSignal?: AbortSignal
-  onRetry?: (error: NanoCodeError, attempt: number, delayMs: number) => void
+  onRetry?: (error: nanocodeError, attempt: number, delayMs: number) => void
 }
 
 const DEFAULT_RETRY: Required<Omit<RetryOptions, 'abortSignal' | 'onRetry'>> = {
@@ -157,7 +157,7 @@ export async function withRetry<T>(
   options: RetryOptions = {},
 ): Promise<T> {
   const opts = { ...DEFAULT_RETRY, ...options }
-  let lastError: NanoCodeError | undefined
+  let lastError: nanocodeError | undefined
   let consecutive529 = 0
 
   for (let attempt = 0; attempt <= opts.maxRetries; attempt++) {
@@ -236,7 +236,7 @@ export function sleep(ms: number, signal?: AbortSignal): Promise<void> {
 /**
  * Check if an error is retryable (for callers that want to handle retry themselves)
  */
-export function isRetryable(error: NanoCodeError): boolean {
+export function isRetryable(error: nanocodeError): boolean {
   return (
     error instanceof RateLimitError ||
     error instanceof OverloadedError ||

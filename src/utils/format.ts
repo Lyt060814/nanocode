@@ -1,5 +1,5 @@
 /**
- * NanoCode — ANSI Formatting Utilities
+ * nanocode — ANSI Formatting Utilities
  *
  * Terminal color helpers, tool result formatting, thinking display,
  * cost display, and unified diff with color.
@@ -15,7 +15,7 @@ const ESC = '\x1b['
 const RESET = `${ESC}0m`
 
 // ---------------------------------------------------------------------------
-// NanoCode Brand Colors (RGB)
+// nanocode Brand Colors (RGB)
 //   Primary:  soft blue  rgb(100,149,237) — text, highlights, suggestions
 //   Accent:   warm gold  rgb(230,190,80)  — spinner, icons, accents
 // ---------------------------------------------------------------------------
@@ -165,7 +165,7 @@ export function gradientBlock(lines: string[], from: [number, number, number], t
   }).join('\n')
 }
 
-// NanoCode brand gradient: blue → gold
+// nanocode brand gradient: blue → gold
 const GRADIENT_FROM: [number, number, number] = [100, 149, 237] // soft blue
 const GRADIENT_TO: [number, number, number] = [230, 190, 80]   // warm gold
 
@@ -190,7 +190,7 @@ const LOGO_MEDIUM = [
 ]
 
 /**
- * Render the NanoCode gradient logo.
+ * Render the nanocode gradient logo.
  */
 export function renderLogo(): string {
   const width = process.stdout.columns || 80

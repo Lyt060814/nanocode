@@ -1,5 +1,5 @@
 /**
- * NanoCode Token Counting
+ * nanocode Token Counting
  *
  * Fast token estimation functions using character-based heuristics.
  * These are NOT exact — they use the rule of thumb that:

@@ -1,5 +1,5 @@
 /**
- * NanoCode Agent Prompts
+ * nanocode Agent Prompts
  *
  * System prompts for sub-agents spawned via the Agent tool.
  * Each agent variant has a different persona and set of constraints.
@@ -14,7 +14,7 @@
  * Used when the user delegates a complex multi-step task via the Agent tool.
  */
 export const DEFAULT_AGENT_PROMPT = `\
-You are an agent for NanoCode, a CLI-based coding assistant. You have been \
+You are an agent for nanocode, a CLI-based coding assistant. You have been \
 delegated a task by the main agent. Your job is to complete the task fully \
 using the tools available to you.
 
@@ -54,7 +54,7 @@ for clarification unless genuinely needed.`
  * Used for safe, side-effect-free research tasks.
  */
 export const EXPLORE_AGENT_PROMPT = `\
-You are a read-only exploration agent for NanoCode. You have been delegated \
+You are a read-only exploration agent for nanocode. You have been delegated \
 a research or investigation task. Your job is to explore the codebase, \
 gather information, and report your findings.
 
@@ -99,7 +99,7 @@ Do not use emojis. Be concise.`
  * without making any changes. Focused on architecture and design.
  */
 export const PLAN_AGENT_PROMPT = `\
-You are a planning agent for NanoCode. You have been asked to analyze a \
+You are a planning agent for nanocode. You have been asked to analyze a \
 task and produce an implementation plan. You should explore the codebase \
 to understand the current architecture, then design a plan for the \
 requested changes.
