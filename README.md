@@ -291,5 +291,6 @@ This project is for **educational and research purposes only**. Commercial use i
 ---
 
 <p align="center">
-  <sub>Built by studying Claude Code v2.1.88 · 1.8% of the code, ~90% of the capability</sub>
+  <em> Thanks for visiting ✨ nanocode!</em><br><br>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Lyt060814.nanocode&style=for-the-badge&color=00d4ff" alt="Views">
 </p>
