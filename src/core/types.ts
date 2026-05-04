@@ -103,7 +103,9 @@ export interface ToolContext {
   sessionId: string
   abortSignal?: AbortSignal
   permissionMode: PermissionMode
+  setPermissionMode?: (mode: PermissionMode) => void
   onPermissionRequest: (tool: string, input: unknown, message: string) => Promise<PermissionDecision>
+  readline?: import('node:readline').Interface
 }
 
 export interface ToolDef<Input = any> {
@@ -231,6 +233,7 @@ export interface QueryParams {
   systemPromptBlocks: SystemPromptBlock[]
   maxTurns?: number
   permissionMode: PermissionMode
+  setPermissionMode?: (mode: PermissionMode) => void
   apiKey: string
   cwd: string
   sessionId: string
@@ -241,6 +244,7 @@ export interface QueryParams {
   // Injected services
   readFileState: FileStateCache
   fileHistory: FileHistoryState
+  readline?: import('node:readline').Interface
 }
 
 // ---------------------------------------------------------------------------

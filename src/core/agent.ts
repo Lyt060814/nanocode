@@ -196,8 +196,11 @@ async function checkToolPermission(
     return { allowed: true } // Unknown tools handled by executor
   }
 
+  // Use toolContext.permissionMode which can be updated by ExitPlanMode
+  const currentMode = toolContext.permissionMode
+
   // Bypass mode: allow everything
-  if (params.permissionMode === 'bypassPermissions') {
+  if (currentMode === 'bypassPermissions') {
     return { allowed: true }
   }
 
@@ -207,7 +210,7 @@ async function checkToolPermission(
   }
 
   // Plan mode: deny write operations
-  if (params.permissionMode === 'plan') {
+  if (currentMode === 'plan') {
     return {
       allowed: false,
       message: `Tool ${toolUse.name} is not allowed in plan mode (read-only).`,
@@ -215,7 +218,7 @@ async function checkToolPermission(
   }
 
   // Accept edits mode: allow file operations
-  if (params.permissionMode === 'acceptEdits') {
+  if (currentMode === 'acceptEdits') {
     const fileTools = ['Edit', 'Write', 'NotebookEdit']
     if (fileTools.includes(toolUse.name)) {
       return { allowed: true }
@@ -318,7 +321,9 @@ export async function* agentLoop(
     sessionId: params.sessionId,
     abortSignal: params.abortSignal,
     permissionMode: params.permissionMode,
+    setPermissionMode: params.setPermissionMode,
     onPermissionRequest: params.onPermissionRequest,
+    readline: params.readline,
   }
 
   while (true) {

@@ -899,6 +899,9 @@ async function runAgent(
     systemPromptBlocks: state.systemPromptBlocks,
     maxTurns: 200,
     permissionMode: state.permissionMode,
+    setPermissionMode: (mode: PermissionMode) => {
+      state.permissionMode = mode
+    },
     apiKey: state.apiKey,
     cwd: state.cwd,
     sessionId: state.sessionId,
@@ -907,6 +910,7 @@ async function runAgent(
     enableThinking: state.enableThinking,
     readFileState,
     fileHistory,
+    readline: rl ?? undefined,
   }
 
   let finalMessages = messages
