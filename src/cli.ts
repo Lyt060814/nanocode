@@ -57,8 +57,8 @@ interface CliArgs {
 function parseArgs(): CliArgs {
   const args = process.argv.slice(2)
   const result: CliArgs = {
-    model: process.env.ANTHROPIC_MODEL || 'sonnet',
-    apiKey: process.env.ANTHROPIC_API_KEY || process.env.OPENROUTER_API_KEY || '',
+    model: process.env.ANTHROPIC_MODEL || process.env.MY_MODEL ||'sonnet',
+    apiKey: process.env.ANTHROPIC_API_KEY || process.env.OPENROUTER_API_KEY || process.env.MY_API_KEY || '',
     permissionMode: 'default',
     cwd: process.cwd(),
     enableThinking: false,

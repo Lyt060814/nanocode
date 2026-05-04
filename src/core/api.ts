@@ -33,13 +33,16 @@ export function createClient(apiKey: string, baseURL?: string): Anthropic {
   if (_client) return _client
   const opts: any = { apiKey }
   // Support OpenRouter / custom base URLs
-  const url = baseURL || process.env.ANTHROPIC_BASE_URL
+  const url = baseURL || process.env.ANTHROPIC_BASE_URL || process.env.MY_BASE_URL
   if (url) {
     opts.baseURL = url
   }
   // OpenRouter uses different auth header
   if (process.env.OPENROUTER_API_KEY && !apiKey) {
     opts.apiKey = process.env.OPENROUTER_API_KEY
+  }
+  opts.headers = {
+    'Authorization': `Bearer ${apiKey}`,
   }
   _client = new Anthropic(opts)
   return _client
